@@ -6,10 +6,11 @@ def check_key_format(win_key: str) -> bool:
     """
     import re
 
-    match = re.search("^[0-9]{3}-[0-9]{7}$", win_key)
-    if match:
+    # if the win_key matches exactly return True
+    if re.search("^[0-9]{3}-[0-9]{7}$", win_key):
         return True
-    return False
+    else:
+        return False
 
 
 def check_key_part_one(key_part: str) -> bool:
@@ -39,7 +40,7 @@ def mod7(key_part: str):
 def validate_win95_key(win_key: str):
     """
     Validated a provided Windows 95 key.
-    :param win_key:
+    param win_key:
     :return:
     """
     win_key = win_key.strip()
